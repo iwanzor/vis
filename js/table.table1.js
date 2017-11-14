@@ -90,7 +90,7 @@ $(document).ready(function() {
 			}
 		],
 		select: true,
-		lengthChange: false,
+		lengthChange: true,
 		buttons: [
 			{ extend: 'create', editor: editor },
 			{ extend: 'edit',   editor: editor },
