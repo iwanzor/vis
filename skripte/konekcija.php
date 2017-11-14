@@ -3,6 +3,7 @@
 	$db_db= "vis";
 	$db_user = "root";
 	$db_pass = "";
+	$db_table="table1";
 	$mysqli = new mysqli($db_server, $db_user, $db_pass, $db_db);
 
 	if ($mysqli->connect_errno) {

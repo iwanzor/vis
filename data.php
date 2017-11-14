@@ -8,12 +8,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 	<link rel="stylesheet" type="text/css" href="DataTables-1.10.4/media/css/jquery.dataTables.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/moment-2.18.1/dt-1.10.16/b-1.4.2/sl-1.2.3/datatables.min.css">
 	<link rel="stylesheet" href="css/css.css">
-	<?php 
-			include "skripte/konekcija.php";
-			$sql="SELECT * FROM table1";
-          	$q=$mysqli->query($sql);
-     ?>
+	<link rel="stylesheet" type="text/css" href="css/generator-base.css">
+	<link rel="stylesheet" type="text/css" href="css/editor.dataTables.min.css">
 </head>
 <body>
 	<div class="container">
@@ -32,8 +30,8 @@
 
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Početna <span class="sr-only">(current)</span></a></li>
-		        <li><a href="data.php">Data</a></li>
+		        <li><a href="index.php">Početna <span class="sr-only">(current)</span></a></li>
+		        <li class="active"><a href="data.php">Data</a></li>
 		      </ul>
 		    </div>
 		  </div>
@@ -51,46 +49,25 @@
 				<div class="well">
 					<h2>Data</h2>
 					<div class="table-responsive">
-						<table id="tabela" class="table-responsive table-bordered table-striped table-hover">
-						 <thead>
-						          <tr>
-						          	<th>ID</th>
-						            <th>Nationality</th>
-						            <th>Country</th>
-						            <th>Office</th>
-						            <th>Visa Type</th>
-						            <th>Document</th>
-						            <th>Description</th>
-						            <th>Note</th>
-						            <th>Document (DE)</th> 
-						            <th>Note (DE)</th>  
-						          </tr>
-						        </thead>
-						<tbody>
-						  <?php
-						          while ($red=$q->fetch_object()){
-						            ?>
-						 <tr id="<?php echo $red->id; ?>">
-						 			<td><?php echo $red->id; ?></td>
-						    		<td><?php echo $red->nationality; ?></td>
-						            <td><?php echo $red->country; ?></td>
-						            <td><?php echo $red->office; ?></td>
-						            <td><?php echo $red->visatype; ?></td>
-						            <td><?php echo $red->document; ?></td>
-						            <td><?php echo $red->description; ?></td>
-						            <td><?php echo $red->note; ?></td>
-						            <td><?php echo $red->document_de; ?></td>
-						            <td><?php echo $red->note_de; ?></td>
-						          </tr>
-						          <?php
-						           } 
-						          ?>
-						</tbody>
-						</table>
+						<table cellpadding="0" cellspacing="0" border="0" class="display" id="table1" width="100%">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Nationality</th>
+								<th>Vountry</th>
+								<th>Office</th>
+								<th>Visa type</th>
+								<th>Document</th>
+								<th>Description</th>
+								<th>Note</th>
+								<th>Document (DE)</th>
+								<th>Note (DE)</th>
+							</tr>
+						</thead>
+					</table>
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-primary" id="btnDeleteRow">Delete</button>
 		</div>
 	</div>
 
@@ -103,8 +80,9 @@
 	<script src="https://use.fontawesome.com/56181d7858.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 	<script src="DataTables-1.10.4/media/js/jquery.dataTables.min.js"></script>
-	<script src="js/jquery.jeditable.mini.js"></script>
-	<script src="DataTables-1.10.4/extensions/editable/jquery.dataTables.editable.js"></script>
-	<script src="js/dt.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/moment-2.18.1/dt-1.10.16/b-1.4.2/sl-1.2.3/datatables.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/dataTables.editor.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/table.table1.js"></script>
+	<!-- <script src="js/dt.js"></script> -->
 </body>
 </html>
